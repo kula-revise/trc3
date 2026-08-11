@@ -55,7 +55,7 @@
        b = the middle skill (Interpret, Understand). c = unassessed instinct.
        The top skill (Evaluate, Weigh, Apply) sits on a solid accent ground. */
     --chip-a-bg: rgba(var(--a1-rgb),0.16);  --chip-a-fg: var(--a1);
-    --chip-b-bg: rgba(var(--a2-rgb),0.16);  --chip-b-fg: var(--a2);
+    --chip-b-bg: rgba(var(--a2-rgb),0.16);  --chip-b-fg: var(--chip-ink);
     --chip-c-bg: rgba(0,0,0,0.06);
     --scrim:  rgba(27,42,51,0.5);       /* modal backdrop */
     --inset:  rgba(255,255,255,0.4);    /* sort column well */
@@ -195,6 +195,9 @@
   /* bottle green for the structure, copper for anything the learner earned */
   --a1: #1D4D3B;  --a1-rgb: 29,77,59;
   --a2: #9E5320;  --a2-rgb: 158,83,32;
+  /* The interpret and understand chips put --a2 on a tint of itself and measured 4.32.
+     One step darker clears 4.5 and is used for the chip text only. */
+  --chip-ink: #8F4A1C;
   /* The two hover steps are derived, not identity. Left in the engine block
      they kept the engine's bottle green against this skin's copper. */
   --ink-deep: #0F1613;
@@ -806,7 +809,7 @@ const FLOW = [
       "The promise and the queue are two different questions"
     ],
     "correct": 3,
-    "explanation": "Nothing is scored here. A promise to see people and a system that reaches everyone are not the same thing. You can keep the first while failing the second, and that gap is where most arguments about institutions live, because both sides are telling the truth. The forty who were seen describe a working clinic and the bench describes a broken one."
+    "explanation": "Nothing is scored here. A promise to see people and a system that reaches everyone are not the same thing. You can keep the first while failing the second. That gap is where most arguments about institutions live, because both sides are telling the truth. The forty who were seen describe a working clinic. The bench describes a broken one."
   },
   {
     "type": "question",
@@ -819,7 +822,7 @@ const FLOW = [
       "That the clinic has more staff than it actually needs"
     ],
     "correct": 1,
-    "explanation": "A count of what was done says nothing about what was not done. Forty seen is a true figure and close to useless on its own, because the number you want is forty out of how many. In a moment you meet a set of real figures with exactly this shape."
+    "explanation": "A count of what was done says nothing about what was not done. Forty seen is a true figure and close to useless on its own. The number you want is forty out of how many. In a moment you meet a set of real figures with exactly this shape."
   },
   {
     "type": "content",
@@ -913,7 +916,7 @@ const FLOW = [
       "That he had not been given enough time to decide"
     ],
     "correct": 0,
-    "explanation": "Judges write to sound settled, so hesitation on the page is deliberate. He agrees with the order and says plainly that the reasoning cost him something. Option {opt2} misreads a concurring judgment, because concurring means agreeing with the result. What he is marking for you is a decision that was close rather than obvious."
+    "explanation": "Judges write to sound settled, so hesitation on the page is deliberate. He agrees with the order, and he says plainly that the reasoning cost him something. Option {opt2} misreads a concurring judgment. Concurring means agreeing with the result. He is showing you a decision that was close rather than obvious."
   },
   {
     "type": "content",
@@ -939,7 +942,7 @@ const FLOW = [
       "Amnesty applications had a deadline and reparation claims did not"
     ],
     "correct": 0,
-    "explanation": "Four marks means two developed points. The first is authority: the Amnesty Committee could grant amnesty outright, and the Reparation Committee could only recommend. The second is where a recommendation went, because it travelled to the President, then to parliament, then into regulations. Option {opt1} reverses the numbers, and you can check them in the table above."
+    "explanation": "Four marks means two developed points. First, authority. The Amnesty Committee could grant amnesty outright. The Reparation Committee could only recommend. Second, where a recommendation had to travel. To the President, then to parliament, then into regulations. Option {opt1} reverses the numbers, and you can check them in the table above."
   },
   {
     "type": "question",
@@ -953,7 +956,7 @@ const FLOW = [
       "Both show the commission ran out of time before it reported"
     ],
     "correct": 0,
-    "explanation": "A supports answer names the shared point and then says what the second source adds, because agreement on its own is not an answer. The shared point is reparation. The judge described the arrangement in 1996, and the figures show you what it had produced by 1998. Option {opt1} is true of the amnesty numbers and has nothing to do with Source 3A."
+    "explanation": "A supports answer names the shared point, then says what the second source adds. Agreement on its own is not an answer. The shared point is reparation. The judge described the arrangement in 1996. The figures show you what it had produced by 1998. Option {opt1} is true of the amnesty numbers and has nothing to do with Source 3A."
   },
   {
     "type": "question",
@@ -977,7 +980,7 @@ const FLOW = [
       "2": 1,
       "3": 1
     },
-    "explanation": "The first two are arithmetic you can do on the numbers in front of you. The last two are true, and no count of applications can establish either, because a table records decisions rather than silences or feelings. What was left out belongs to Source 3A, and how anyone felt belongs to the hearings."
+    "explanation": "The first two are sums you can do on the numbers in front of you. The last two are true, and no count of applications can show either. A table records decisions. It does not record silences or feelings. What was left out belongs to Source 3A. How anyone felt belongs to the hearings."
   },
   {
     "type": "question",
@@ -991,7 +994,7 @@ const FLOW = [
       "The institutions concerned had all closed down by then"
     ],
     "correct": 0,
-    "explanation": "An institution could attend, say very little and leave. That is why many people concluded the companies which had profited from apartheid were left untouched by the whole process. Option {opt1} is wrong, because these hearings were public like the rest of the commission's work, and it is the one that pulls you. The absence of compulsion is what separates a hearing from an investigation."
+    "explanation": "An institution could attend, say very little and leave. That is why many people concluded the companies which had profited from apartheid walked away untouched. Option {opt1} is wrong, because these hearings were public like the rest of the commission's work. Nobody had to come and nobody had to answer, and that is what separates a hearing from an investigation."
   },
   {
     "type": "question",
@@ -1005,7 +1008,7 @@ const FLOW = [
       "They give no breakdown by province or type of violation"
     ],
     "correct": 0,
-    "explanation": "A limitation is a silence rather than a fault. A count of applications and approvals records what an office did, and fairness is about what people were owed and what they got. Option {opt2} is a reliability point about who compiled the numbers, which is a different question, which is where you would go wrong. Fairness lives in the testimony, which is why the hearings are evidence and not only history."
+    "explanation": "A limitation is something a source cannot tell you. A count of applications and approvals records what an office did. Fairness is about what people were owed and what they got. Option {opt2} is a reliability point about who compiled the numbers, which is a different question. For fairness you need the testimony, and that is in the hearings."
   },
   {
     "type": "carousel",
